@@ -1,0 +1,33 @@
+name "selection_sleuth"
+description "Library that allows APIs to infer selection lists from instances of getters and setters."
+authors "Chad Joan"
+copyright "Copyright © 2020, Chad Joan"
+license "Boost"
+
+configuration "library" {
+	targetType "library"
+	targetPath "lib/"
+}
+
+configuration "example" {
+	targetType "executable"
+	targetPath "bin/"
+	targetName "example"
+	buildOptions "debugMode" "debugInfo"
+	sourcePaths "example/" "tests/"
+	importPaths "example/" "tests/"
+	excludedSourceFiles "tests/main.d"
+}
+
+/* The "unittest" configuration is a special configuration that is used
+** when "dub test" is invoked on the command line.
+*/
+configuration "unittest" {
+	targetType "executable"
+	targetPath "bin/"
+	targetName "unittests_main"
+	buildOptions "unittests"
+	/*excludedSourceFiles ["source/app.d"]*/
+	sourcePaths "tests/"
+	importPaths "tests/"
+}

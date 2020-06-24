@@ -10,9 +10,13 @@
 # Compiled Static libraries
 *.a
 *.lib
+lib/*
+!lib/.gitkeep
 
 # Executables
 *.exe
+bin/*
+!bin/.gitkeep
 
 # DUB
 .dub
